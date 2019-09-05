@@ -1,22 +1,99 @@
-(function() {
-  var hamburger = {
-    navToggle: document.querySelector(".nav-toggle"),
-    nav: document.querySelector("nav"),
+const myAge = () => {
+let myBirthday = new Date("11/28/1985"); 
+let presentDate = new Date(); 
+return ((presentDate.getTime() - myBirthday.getTime()) / (1000 * 3600 * 24) / 365).toFixed(2); 
+}
 
-    doToggle: function(e) {
-      e.preventDefault();
-      this.navToggle.classList.toggle("expanded");
-      this.nav.classList.toggle("expanded");
-    }
-  };
+document.querySelector(".age").innerHTML = myAge();
 
-  hamburger.navToggle.addEventListener("click", function(e) {
-    hamburger.doToggle(e);
-  });
-  hamburger.nav.addEventListener("click", function(e) {
-    hamburger.doToggle(e);
-  });
-})();
+document.querySelector(".footer-year").innerHTML = new Date().getFullYear();
+
+const allProjects = document.querySelectorAll(".projects__project");
+console.log(allProjects);
+
+const leftProject = document.querySelector(".left");
+const middleProject = document.querySelector(".middle");
+const rightProject = document.querySelector(".right");
+
+allProjects.forEach(project => project.addEventListener("click", function(){
+
+    if (project.className.includes("left")) {
+
+      middleProject.classList.add('not-active');
+      middleProject.style.transform = "scale(0.6) translateX(50%)" ;
+      middleProject.classList.remove('active');
+
+      rightProject.classList.add('not-active');
+      rightProject.style.transform = "scale(0.6) translateX(-20%)" ;
+      rightProject.classList.remove('active');
+
+     
+      
+    project.className = '';
+    project.classList.add('projects__project');
+    project.classList.add('active');
+    project.classList.add('left');
+    project.style.transform = "translateX(40%)" ;
+
+    
+
+
+  }
+
+   if (project.className.includes("right")) {
+
+    middleProject.classList.add('not-active');
+    middleProject.style.transform = "scale(0.6) translateX(-50%)" ;
+    middleProject.classList.remove('active');
+
+    leftProject.classList.add('not-active');
+    leftProject.style.transform = "scale(0.6) translateX(20%)" ;
+    leftProject.classList.remove('active');
+
+   
+    
+  project.className = '';
+  project.classList.add('projects__project');
+  project.classList.add('active');
+  project.classList.add('right');
+  project.style.transform = "translateX(-40%)" ;
+
+    
+
+
+  }
+
+  if (project.className.includes("middle")) {
+
+    rightProject.classList.add('not-active');
+    rightProject.style.transform = "scale(0.6) translateX(-20%)" ;
+    rightProject.classList.remove('active');
+
+    leftProject.classList.add('not-active');
+    leftProject.style.transform = "scale(0.6) translateX(20%)" ;
+    leftProject.classList.remove('active');
+
+   
+    
+  project.className = '';
+  project.classList.add('projects__project');
+  project.classList.add('active');
+  project.classList.add('middle');
+  project.style.transform = "none" ;
+
+    
+
+
+  }
+
+
+
+}));
+    
+
+
+
+
 
 TweenMax.from(".home__text", 1, {
   y: 200,
@@ -43,12 +120,19 @@ TweenMax.from(".nav-toggle", 2, {
  
 
 
-let coreImgTween = TweenMax.staggerFrom(
-  ".coreskills__img",
-  1,
-  { scale: 0.01, rotation: 200, ease: Power3.easeInOut },
-  0.2
-);
+
+
+let coreImgTL = new TimelineMax();
+  
+coreImgTL.staggerFrom(
+    ".coreskills__img",
+    1,
+    { scale: 0.01, rotation: 200, ease: Power3.easeInOut },
+    0.2
+  ).staggerTo(".coreskills__img", 0.4, {scale: 1.3, ease: Power2.easeOut, delay: 0.2},0.2)
+  .staggerTo(".coreskills__img", 0.2, {scale: 1.0, ease: Power4.easeOut, delay: 0.2})
+
+
 let coreHeadlineTween = TweenMax.staggerFrom(
   ".coreskills__headline",
   1,
@@ -139,7 +223,7 @@ let coreHeadlineScene = new ScrollMagic.Scene({
 
 let coreImgScene = new ScrollMagic.Scene({
   triggerElement: ".core-skills"
-}).setTween(coreImgTween);
+}).setTween(coreImgTL);
 
 let coreParagraphScene = new ScrollMagic.Scene({
   triggerElement: ".core-skills"
