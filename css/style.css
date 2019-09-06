@@ -12,8 +12,8 @@
 
 body {
   background-color: #fff;
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
   scroll-snap-stop: always;
 }
 
@@ -208,8 +208,9 @@ video {
 
 @media (max-width: 599px) {
   .core-skills__box p {
-    width: 98vw;
-    padding: 0.5rem;
+    width: 95vw;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
   }
 }
 
@@ -315,8 +316,8 @@ video {
 
 @media (max-width: 599px) {
   .about-me__background {
-    -webkit-clip-path: none;
-            clip-path: none;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 54%, 0 54%);
+            clip-path: polygon(0 0, 100% 0, 100% 54%, 0 54%);
   }
 }
 
@@ -371,11 +372,10 @@ video {
   .about-me__skills {
     width: 98vw;
     height: 100%;
-    margin: 0.5rem;
+    margin: 0rem 0.5rem 5rem 0.5rem;
     padding: 0.5rem;
     -webkit-transform: none;
             transform: none;
-    background-color: #fff;
   }
 }
 
@@ -440,7 +440,7 @@ video {
 
 .projects {
   scroll-snap-align: start;
-  height: 100vh;
+  height: 200vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -504,8 +504,8 @@ video {
 }
 
 .projects .not-active {
-  -webkit-filter: blur(2px) grayscale(1);
-          filter: blur(2px) grayscale(1);
+  -webkit-filter: blur(3px) grayscale(1);
+          filter: blur(3px) grayscale(1);
   display: inline-block;
 }
 
@@ -518,9 +518,10 @@ video {
   }
 }
 
-.projects .left:hover, .projects .middle:hover, .projects .right:hover {
+.projects .not-active:hover {
   -webkit-filter: none;
           filter: none;
+  cursor: pointer;
 }
 
 .projects .left {
@@ -575,6 +576,12 @@ video {
   max-width: 100%;
 }
 
+@media (max-width: 599px) {
+  .projects__project img {
+    max-width: 98vw;
+  }
+}
+
 .projects__project h1 {
   font-family: "Cairo", sans-serif;
   font-size: 2rem;
@@ -589,7 +596,7 @@ video {
 }
 
 .projects__project p {
-  width: 70%;
+  width: 80%;
   text-align: justify;
   text-align-last: center;
   margin: auto;
@@ -630,7 +637,7 @@ video {
 }
 
 .contact {
-  scroll-snap-align: start;
+  scroll-snap-align: end;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -651,7 +658,7 @@ video {
 
 @media (max-width: 599px) {
   .contact {
-    height: 100%;
+    height: 80vh;
   }
 }
 
@@ -750,7 +757,8 @@ video {
 
 @media (max-width: 599px) {
   .contact__form .btn {
-    height: 5%;
+    height: 10%;
+    width: 80%;
   }
 }
 
@@ -767,7 +775,7 @@ video {
 }
 
 .footer {
-  scroll-snap-align: start;
+  scroll-snap-align: end;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -790,6 +798,7 @@ video {
   .footer {
     margin: 4rem 0 0 0;
     height: 100%;
+    width: 100%;
   }
 }
 

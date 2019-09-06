@@ -21,7 +21,7 @@ $grey: #b1b1b1;
 
 body {
   background-color: #fff;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-snap-stop: always;
 
   @include for-phone-only {
@@ -169,8 +169,9 @@ video {
       width: 80%;
       color: $grey;
       @include for-phone-only {
-        width: 98vw;
-        padding: 0.5rem;
+        width: 95vw;
+        padding: 0.5rem 1rem;
+        margin: 1rem 0;
       }
     }
   }
@@ -241,7 +242,7 @@ video {
     z-index: -1;
 
     @include for-phone-only {
-      clip-path: none;
+        clip-path: polygon(0 0, 100% 0, 100% 54%, 0 54%);
     }
   }
 
@@ -287,10 +288,9 @@ video {
     @include for-phone-only {
       width: 98vw;
       height: 100%;
-      margin: 0.5rem;
+      margin: 0rem 0.5rem 5rem 0.5rem;
       padding: 0.5rem;
       transform: none;
-      background-color: #fff;
     }
 
     h1 {
@@ -336,7 +336,7 @@ video {
 
 .projects {
   scroll-snap-align: start;
-  height: 100vh;
+  height: 200vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -369,6 +369,7 @@ video {
     display: block;
     filter: none;
     transform: scale(1);
+    
     @include for-phone-only {
       order: 1;
     
@@ -377,7 +378,7 @@ video {
 
   .not-active {
 
-    filter: blur(2px) grayscale(1);
+    filter: blur(3px) grayscale(1);
        display: inline-block;
     @include for-phone-only {
         transform: none;
@@ -386,10 +387,10 @@ video {
 
   }
 
-  .left:hover, .middle:hover, .right:hover {
+  .not-active:hover {
 
     filter: none;
-
+    cursor: pointer;
   }
 
   .left {
@@ -418,6 +419,7 @@ video {
     margin: 1rem;
     display: none;
     transition: 0.5s ease;
+     
 
     @include for-phone-only {
       width: 98vw;
@@ -428,6 +430,10 @@ video {
 
     img {
       max-width: 100%;
+      @include for-phone-only {
+      
+        max-width:98vw;
+    }
     }
 
     h1 {
@@ -442,7 +448,7 @@ video {
     }
 
     p {
-      width: 70%;
+      width: 80%;
       text-align: justify;
       text-align-last: center;
       margin: auto;
@@ -481,7 +487,7 @@ video {
 }
 
 .contact {
-  scroll-snap-align: start;
+  scroll-snap-align: end;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -491,7 +497,7 @@ video {
   overflow-x: hidden;
 
   @include for-phone-only {
-    height: 100%;
+    height: 80vh;
   }
 
   img {
@@ -570,7 +576,8 @@ video {
       transition: 90ms ease;
 
       @include for-phone-only {
-        height: 5%;
+        height: 10%;
+        width: 80%;
       }
     }
 
@@ -587,7 +594,7 @@ video {
 }
 
 .footer {
-  scroll-snap-align: start;
+  scroll-snap-align: end;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -599,6 +606,7 @@ video {
   @include for-phone-only {
     margin: 4rem 0 0 0;
     height: 100%;
+    width: 100%;
   }
 
   &__content {

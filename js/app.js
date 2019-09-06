@@ -167,13 +167,17 @@ let skillsTween = TweenMax.from(".about-me__skills", 0.8, {
 
 let skillsTL = new TimelineMax();
   
-skillsTL.add(skillsTween).from(".about-me__skills", 0.5, {scale:0.6, ease: Power2.easeOut, delay: -0.3})
+skillsTL.add(skillsTween)
+
+.from(".about-me__skills", 0.5, {scale:0.6, ease: Power2.easeOut, delay: -0.3})
+.from(".about-me__skills", 0.2, {rotation: 10, ease: Power4.easeOut, delay: 0.2})
 
 
-let projectsTween = TweenMax.staggerFrom(
+
+let projectsTween = TweenMax.from(
     ".projects__project",
-    0.6,
-    { scale: 0.5, ease: Power2.easeInOut, delay: 0.1 }
+    0.1,
+    { scale: 0.3, ease: Power3.easeInOut, delay: 0.1 }
   );
 
   let cableLeftTween = TweenMax.from("#cable-left", 0.3, {
