@@ -5,92 +5,102 @@ return ((presentDate.getTime() - myBirthday.getTime()) / (1000 * 3600 * 24) / 36
 }
 
 document.querySelector(".age").innerHTML = myAge();
-
 document.querySelector(".footer-year").innerHTML = new Date().getFullYear();
 
-const allProjects = document.querySelectorAll(".projects__project");
-console.log(allProjects);
+const toggle = document.querySelector('.toggle input')
+const menu = document.querySelector('.menu')
 
-const leftProject = document.querySelector(".left");
-const middleProject = document.querySelector(".middle");
-const rightProject = document.querySelector(".right");
+document.querySelector('.toggle').addEventListener('click', () => {
+  toggle.checked = !toggle.checked
+  
+})
 
-allProjects.forEach(project => project.addEventListener("click", function(){
+let  menuState = 0;
 
-    if (project.className.includes("left")) {
+toggle.addEventListener('click', () => {
 
-      middleProject.classList.add('not-active');
-      middleProject.style.transform = "scale(0.6) translateX(50%)" ;
-      middleProject.classList.remove('active');
 
-      rightProject.classList.add('not-active');
-      rightProject.style.transform = "scale(0.6) translateX(-20%)" ;
-      rightProject.classList.remove('active');
+if (menuState == 0) {
 
-     
-      
-    project.className = '';
-    project.classList.add('projects__project');
-    project.classList.add('active');
-    project.classList.add('left');
-    project.style.transform = "translateX(40%)" ;
+  menu.classList.toggle('menu-active')
 
+  TweenMax.set(".toggle", {
+    backgroundColor: "transparent"
+  });
+
+  TweenMax.to(".toggle", 0.4, {
+    x: -320,
+  });
+
+  TweenMax.from(".toggle", 0.6, {
+    rotation: -360,
+    delay: 0.1
     
+  });
 
 
-  }
+  menuState = 1;
 
-   if (project.className.includes("right")) {
+  TweenMax.set(".menu-item", {
+    scale:1
+  });
+  
+  
+    TweenMax.staggerFrom(".menu-item", 0.6, {
+      scale: 0,
+      delay:0.4,
+      ease: Power4.easeOut
+    },0.2);
 
-    middleProject.classList.add('not-active');
-    middleProject.style.transform = "scale(0.6) translateX(-50%)" ;
-    middleProject.classList.remove('active');
+}
 
-    leftProject.classList.add('not-active');
-    leftProject.style.transform = "scale(0.6) translateX(20%)" ;
-    leftProject.classList.remove('active');
+else {
 
-   
+  menuState = 0;
+
+  TweenMax.staggerTo(".menu-item", 0.1, {
+    scale: 0
+  },0.1);
+
+ 
+
+  
+
+  setTimeout(function(){ 
+
+
+
+  TweenMax.to(".toggle", 0.4, {
+    x: 0,
+
+  });
+
+  TweenMax.from(".toggle", 0.6, {
+    rotation: 360,
+    delay: 0.1
     
-  project.className = '';
-  project.classList.add('projects__project');
-  project.classList.add('active');
-  project.classList.add('right');
-  project.style.transform = "translateX(-40%)" ;
-
+  });
     
+  menu.classList.toggle('menu-active');
 
+}, 500);
 
-  }
+setTimeout(function(){ 
 
-  if (project.className.includes("middle")) {
+  TweenMax.set(".toggle", {
+    backgroundColor: "#fff"
+  });
 
-    rightProject.classList.add('not-active');
-    rightProject.style.transform = "scale(0.6) translateX(-20%)" ;
-    rightProject.classList.remove('active');
-
-    leftProject.classList.add('not-active');
-    leftProject.style.transform = "scale(0.6) translateX(20%)" ;
-    leftProject.classList.remove('active');
-
-   
-    
-  project.className = '';
-  project.classList.add('projects__project');
-  project.classList.add('active');
-  project.classList.add('middle');
-  project.style.transform = "none" ;
-
-    
-
-
-  }
+}, 1000);
 
 
 
-}));
-    
+}
 
+
+  
+  
+})
 
 
 
@@ -150,7 +160,7 @@ let coreParagraphTween = TweenMax.staggerFrom(
 let companiesTween = TweenMax.staggerFrom(
   ".companies__logo",
   0.4,
-  { scale: 0, ease: Power1.easeInOut, delay: 0.2 },
+  { scale: 0, ease: Power1.easeInOut, delay: 0.2, force3D:false },
   0.08
 );
 
@@ -174,10 +184,10 @@ skillsTL.add(skillsTween)
 
 
 
-let projectsTween = TweenMax.from(
+let projectsTween = TweenMax.staggerFrom(
     ".projects__project",
     0.1,
-    { scale: 0.3, ease: Power3.easeInOut, delay: 0.1 }
+    { x:-300, autoAlpha:0, scale:0.4, ease: Power3.easeOut}, 0.2
   );
 
   let cableLeftTween = TweenMax.from("#cable-left", 0.3, {
@@ -246,8 +256,8 @@ let skillsScene = new ScrollMagic.Scene({
 }).setTween(skillsTL);
 
 let projectsScene = new ScrollMagic.Scene({
-    triggerElement: ".projects"
-  }).setTween(projectsTween);
+    triggerElement: ".projects", duration: "400%"
+  }).setTween(projectsTween); 
 
 
   let contactScene = new ScrollMagic.Scene({

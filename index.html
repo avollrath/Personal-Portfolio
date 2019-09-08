@@ -15,11 +15,60 @@
   </head>
   <body>
     <header>
+
+            <label class="toggle">
+                    <input type="checkbox">
+                    <div>
+                        <div>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <svg>
+                            <use xlink:href="#path">
+                        </svg>
+                        <svg>
+                            <use xlink:href="#path">
+                        </svg>
+                    </div>
+                </label>
+                        
+                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+                        <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+                    </symbol>
+                </svg>
+
+                <div class="menu">
+
+                    <nav>
+                            <a href="#home"><li class="menu-item">Home</li></a>
+                        <a href="#about-me"><li class="menu-item">About me</li></a>
+                        <a href="#projects"><li class="menu-item">Projects</li></a>
+                        <a href="#contact"><li class="menu-item">Contact</li></a>
+
+                        <li class="menu-item">
+                                <a href="https://www.linkedin.com/in/andrevollrath/" target="_blank"
+                                  ><i class="fab fa-linkedin"></i></a>
+
+                                <a href="https://github.com/avollrath" target="_blank"
+                                ><i class="fab fa-github"></i>
+                            
+                              <a
+                              href="https://www.instagram.com/charliefeatherlight/"
+                              target="_blank"
+><i class="fab fa-instagram"></i></a>
+                              </li>
+
+                             
+
+                    </nav>
+
+                </div>
   
     </header>
 
     <section class="home">
-      <!-- <img id="logo" src="./assets/images/vollrath_logo.gif" alt="Vollrath Logo"> -->
+     
 
       <div class="home__hi-box">
         <h1></h1>
@@ -117,21 +166,21 @@
       </div>
     </section>
 
-    <section class="about-me">
+    <section class="about-me" id="about-me">
       <div class="about-me__background"></div>
 
       <div class="about-me__text">
         <h1>Hello world!</h1>
         <p>
-          I'm André. I was born and raised in Germany and am currently living in Helsinki, Finland. Today I'm exactly <span class="age"></span> years old. I'm a multi-talented human. Most of my time I design and build digital products.
+          I'm André. Today I'm exactly <span class="age"></span> years old. The first 30 years of my life I spent in Germany. Currently I live in Helsinki, Finland.  I'm a <strong>multi-talented human</strong>. Most of my time I design and build digital products.
      
           <br />
           <br />
-          I possess a degree as a <strong>media designer</strong> and have worked on a multitude of web and print based projects for a range of clients providing Web Design and Development, eCommerce Solutions, Corporate Branding and Graphic Design. 
+          I possess a degree in <strong>Media Design</strong> and have worked on a multitude of web and print based projects for a range of clients providing Web Design and Development, eCommerce Solutions, Corporate Branding and Graphic Design. 
           
           <br />
           <br />
-          I'm quietly confident, naturally curious, and perpetually working on improving my skills one problem at a time.
+          I'm quietly confident, <strong>naturally curious</strong>, and perpetually working on improving my skills one problem at a time.
         </p>
       </div>
 
@@ -183,22 +232,24 @@
       </div>
     </section>
 
-    <section class="projects">
+    <section class="projects" id="projects">
       <h1>My projects</h1>
 
       <div class="projects__wrapper">
-        <div class="projects__project left not-active">
-          <img src="assets/images/project2.jpg" />
+        <div class="projects__project">
+          <img src="assets/images/projects/sushi.jpg" />
+          <div class="description">
           <h1>Sushi-san Website</h1>
           <p>
             I designed and coded the website for the Helsinki based Sushi Restaurant "Sushi-san" from scratch. The owner provided me with the logo and a color scheme, everything else was up to me.
           </p>
           <p class="stack">HTML, CSS</p>
           <a href="http://sushisan.info/" target="_blank">Demo</a>
-        </div>
+        </div>    </div>
 
-        <div class="projects__project active middle">
-          <img src="assets/images/project1.jpg" />
+        <div class="projects__project">
+          <img src="assets/images/projects/janne.jpg" />
+          <div class="description">
           <h1>Janne Heikkinen Website</h1>
           <p>
             This is project EXCALIBUR Lorem ipsum dolor sit amet consectetur,
@@ -207,10 +258,11 @@
           </p>
           <p class="stack">HTML, SASS, JavaScript, React, Contentful, GraphQL, Gatsby</p>
           <a href="https://janneheikkinen.fi/" target="_blank">Demo</a>
-        </div>
+        </div>    </div>
 
-        <div class="projects__project right not-active">
-          <img src="assets/images/project3.jpg" />
+        <div class="projects__project">
+          <img src="assets/images/projects/portfolio.jpg" />
+          <div class="description">
           <h1>Portfolio Website</h1>
           <p>
             This is project EXCALIBUR Lorem ipsum dolor sit amet consectetur,
@@ -221,26 +273,24 @@
           <a href="#Demo">Demo</a>
           <a href="#Demo">GitHub</a>
         </div>
+        </div>
 
         
-        
-      </div>
-
-
-      <div class="projects__wrapper">
-            <div class="projects__project left not-active">
-              <img src="assets/images/project4.jpg" />
-              <h1>Sushi-san Website</h1>
+            <div class="projects__project">
+              <img src="assets/images/projects/color.jpg" />
+              <div class="description">
+              <h1>Color Generator</h1>
               <p>
                 I designed and coded the website for the Helsinki based Sushi Restaurant "Sushi-san" from scratch. The owner provided me with the logo and a color scheme, everything else was up to me.
               </p>
               <p class="stack">HTML, CSS</p>
               <a href="http://sushisan.info/" target="_blank">Demo</a>
-            </div>
+            </div>    </div>
     
-            <div class="projects__project not-active middle">
-              <img src="assets/images/project5.jpg" />
-              <h1>Janne Heikkinen Website</h1>
+            <div class="projects__project">
+              <img src="assets/images/projects/ttu.jpg" />
+              <div class="description">
+              <h1>Think Tank United Website</h1>
               <p>
                 This is project EXCALIBUR Lorem ipsum dolor sit amet consectetur,
                 adipisicing elit. Deserunt animi dolor commodi nam exercitationem
@@ -248,11 +298,12 @@
               </p>
               <p class="stack">HTML, SASS, JavaScript, React, Contentful, GraphQL, Gatsby</p>
               <a href="https://janneheikkinen.fi/" target="_blank">Demo</a>
-            </div>
+            </div>    </div>
     
-            <div class="projects__project right not-active">
-              <img src="assets/images/project3.jpg" />
-              <h1>Portfolio Website</h1>
+            <div class="projects__project">
+              <img src="assets/images/projects/countries.jpg" />
+              <div class="description">
+              <h1>Country Filter Tool</h1>
               <p>
                 This is project EXCALIBUR Lorem ipsum dolor sit amet consectetur,
                 adipisicing elit. Deserunt animi dolor commodi nam exercitationem
@@ -261,14 +312,55 @@
               <p class="stack">HTML, SASS, JavaScript, GSAP</p>
               <a href="#Demo">Demo</a>
               <a href="#Demo">GitHub</a>
-            </div>
+            </div>    </div>
     
             
-            
-          </div>
+
+                <div class="projects__project">
+                  <img class="mobile" src="assets/images/projects/money.jpg" />
+                  <div class="description">
+                  <h1>Money Tracker</h1>
+                  <p>
+                    I designed and coded the website for the Helsinki based Sushi Restaurant "Sushi-san" from scratch. The owner provided me with the logo and a color scheme, everything else was up to me.
+                  </p>
+                  <p class="stack">HTML, CSS</p>
+                  <a href="http://sushisan.info/" target="_blank">Demo</a>
+                </div>    </div>
+        
+                <div class="projects__project">
+                  <img class="mobile" src="assets/images/projects/rokotin.jpg" />
+                  <div class="description">
+                  <h1>Rokotin App</h1>
+                  <p>
+                    This is project EXCALIBUR Lorem ipsum dolor sit amet consectetur,
+                    adipisicing elit. Deserunt animi dolor commodi nam exercitationem
+                    error, ea, nihil beatae iste laborum fugit accusamus alias porro et.
+                  </p>
+                  <p class="stack">HTML, SASS, JavaScript, React, Contentful, GraphQL, Gatsby</p>
+                  <a href="https://janneheikkinen.fi/" target="_blank">Demo</a>
+                </div>    </div>
+        
+                <div class="projects__project">
+                  <img class="mobile" src="assets/images/projects/bmi.jpg" />
+                  <div class="description">
+                  <h1>BMI Calculator</h1>
+                  <p>
+                    This is project EXCALIBUR Lorem ipsum dolor sit amet consectetur,
+                    adipisicing elit. Deserunt animi dolor commodi nam exercitationem
+                    error, ea, nihil beatae iste laborum fugit accusamus alias porro et.
+                  </p>
+                  <p class="stack">HTML, SASS, JavaScript, GSAP</p>
+                  <a href="#Demo">Demo</a>
+                  <a href="#Demo">GitHub</a>
+                </div>
+            </div>
+        
+                
+                
+              </div>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
 
      
         <h1>Let's connect!</h1>
@@ -323,7 +415,7 @@
           </li>
         </ul>
 
-        <p>André Vollrath &copy; <span class="footer-year">2019</span></p>
+        <p>Made with ❤ <br />André Vollrath &copy; <span class="footer-year"></span> </p>
       </div>
     </footer>
 
