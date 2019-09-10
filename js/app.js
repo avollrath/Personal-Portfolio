@@ -8,6 +8,49 @@ const myAge = () => {
   ).toFixed(2);
 };
 
+
+
+let designAnimation = bodymovin.loadAnimation({
+  container: document.getElementById('design-ani'),
+  renderer: 'svg',
+  loop: false,
+  autoplay: false,
+  path: '../assets/json/graphicdesign.json'
+})
+
+let developAnimation = bodymovin.loadAnimation({
+  container: document.getElementById('develop-ani'),
+  renderer: 'svg',
+  loop: false,
+  autoplay: false,
+  path: '../assets/json/development.json'
+})
+
+
+
+let photoAnimation = bodymovin.loadAnimation({
+  container: document.getElementById('photo-ani'),
+  renderer: 'svg',
+  loop: false,
+  autoplay: false,
+  path: '../assets/json/photography.json'
+})
+
+
+
+const hiTL = new TimelineMax({repeat:0});
+hiTL.from(".home__hi-box", 1.3, {scale: 0, ease: Elastic.easeOut.config(0.2, 0.1), delay: 0.4 })
+.to(".home__hi-box h1", 0.6, {rotation: 720, autoAlpha: 0, ease: Sine.easeIn, delay: 0.4 })
+.fromTo(".home__hi-box h2", 1.5, {scale: 0, rotation: -720, autoAlpha: 0.5,ease: Sine.easeIn},{scale: 1, rotation: 0, autoAlpha: 1,ease: Elastic.easeOut.config(0.6, 0.5), delay: -0.4})
+
+
+
+
+const homeTL = new TimelineMax({repeat:-1, delay:4.5});
+homeTL.to(".home__headline-second", 2, {text:"a designer who loves to code.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:3})
+.to(".home__headline-second", 2, {text:"a coder who loves to design.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:3})
+
+
 document.querySelector(".age").innerHTML = myAge();
 document.querySelector(".footer-year").innerHTML = new Date().getFullYear();
 
@@ -124,24 +167,28 @@ TweenMax.from(".home__arrow-container", 0.2, {
 
 let coreImgTL = new TimelineMax();
 
-coreImgTL
-  .staggerFrom(
-    ".coreskills__img",
-    1,
-    { scale: 0.01, rotation: 200, ease: Power3.easeInOut },
-    0.2
-  )
-  .staggerTo(
-    ".coreskills__img",
-    0.3,
-    { scale: 0.8, ease: Power2.easeOut, delay: 0.2 },
-    0.3
-  )
-  .staggerTo(".coreskills__img", 0.2, {
-    scale: 1.0,
-    ease: Power4.easeOut,
-    delay: 0.2
-  });
+// coreImgTL
+//   .staggerFrom(
+//     ".coreskills__img",
+//     1,
+//     { scale: 0.01, rotation: 200, ease: Power3.easeInOut },
+//     0.2
+//   )
+//   .staggerTo(
+//     ".coreskills__img",
+//     0.3,
+//     { scale: 0.8, ease: Power2.easeOut, delay: 0.2 },
+//     0.3
+//   )
+//   .staggerTo(".coreskills__img", 0.2, {
+//     scale: 1.0,
+//     ease: Power4.easeOut,
+//     delay: 0.2
+//   });
+  
+  
+  
+
 
 let coreHeadlineTween = TweenMax.staggerFrom(
   ".coreskills__headline",
@@ -246,7 +293,11 @@ let coreHeadlineScene = new ScrollMagic.Scene({
 
 let coreImgScene = new ScrollMagic.Scene({
   triggerElement: ".core-skills"
-}).setTween(coreImgTL);
+}).on('start', function () {
+  developAnimation.play();
+  photoAnimation.play();
+  designAnimation.play();
+})
 
 let coreParagraphScene = new ScrollMagic.Scene({
   triggerElement: ".core-skills"
