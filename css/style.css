@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display|Cairo:400,700");
+@font-face {
+  font-family: 'customFont';
+  src: url("../assets/font/customFont.woff2") format("woff2"), url("../assets/font/customFont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -333,7 +340,7 @@ header {
 .home__text h2 {
   font-size: 5.1vmax;
   color: #888888;
-  font-family: DK Meshuggeneh, serif;
+  font-family: customFont, serif;
   font-weight: normal;
 }
 
@@ -347,7 +354,7 @@ header {
 .home__text span {
   font-size: 5.1vmax;
   color: #888888;
-  font-family: DK Meshuggeneh, serif;
+  font-family: customFont, serif;
   font-weight: normal;
 }
 
@@ -409,7 +416,7 @@ header {
 .core-skills__box h1 {
   font-size: 2.7rem;
   color: #888888;
-  font-family: DK Meshuggeneh, serif;
+  font-family: customFont, serif;
   font-weight: normal;
   margin: 1rem;
 }
@@ -429,11 +436,12 @@ header {
 
 .core-skills__box p {
   padding: 1rem;
+  font-size: 1.1rem;
   text-align: justify;
   text-align-last: center;
   line-height: 1.5rem;
   margin: 1rem;
-  width: 80%;
+  width: 90%;
   color: #888888;
 }
 
@@ -472,7 +480,7 @@ header {
 .companies h1 {
   font-size: 2.5rem;
   color: #888888;
-  font-family: DK Meshuggeneh, serif;
+  font-family: customFont, serif;
   font-weight: normal;
   margin: 2rem;
 }
@@ -574,7 +582,7 @@ header {
 
 .about-me__text h1 {
   font-size: 4rem;
-  font-family: DK Meshuggeneh, serif;
+  font-family: customFont, serif;
   font-weight: normal;
   margin: 2rem;
 }
@@ -612,7 +620,7 @@ header {
 
 .about-me__skills h1 {
   font-size: 2.5rem;
-  font-family: DK Meshuggeneh, serif;
+  font-family: customFont, serif;
   font-weight: normal;
   margin: 2rem;
   color: #888888;
@@ -686,6 +694,7 @@ header {
           align-items: center;
   position: relative;
   overflow-x: hidden;
+  height: 100%;
 }
 
 @media (max-width: 599px) {
@@ -696,7 +705,7 @@ header {
 
 .projects h1 {
   font-size: 2.5rem;
-  font-family: DK Meshuggeneh, serif;
+  font-family: customFont, serif;
   font-weight: normal;
   margin: 3rem 0 1rem 0;
   color: #888888;
@@ -757,7 +766,7 @@ header {
 }
 
 .projects__project h1 {
-  font-family: DK Meshuggeneh, sans-serif;
+  font-family: customFont, sans-serif;
   font-size: 2.4rem;
   text-transform: uppercase;
   margin: 0 0 1rem 0;
@@ -861,7 +870,7 @@ header {
 
 .contact h1 {
   font-size: 2.5rem;
-  font-family: DK Meshuggeneh, serif;
+  font-family: customFont, serif;
   font-weight: normal;
   margin: 0 0 1rem 0;
   color: #888888;
@@ -1032,27 +1041,6 @@ header {
 }
 
 /* KEYFRAMES ****************************************************************** */
-@-webkit-keyframes hi-animation {
-  0% {
-    -webkit-transform: scale(0.01) rotate(-900deg);
-            transform: scale(0.01) rotate(-900deg);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes hi-animation {
-  0% {
-    -webkit-transform: scale(0.01) rotate(-900deg);
-            transform: scale(0.01) rotate(-900deg);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 @-webkit-keyframes fade-out {
   0% {
     opacity: 1;
@@ -1065,7 +1053,6 @@ header {
     visibility: hidden;
   }
 }
-
 @keyframes fade-out {
   0% {
     opacity: 1;

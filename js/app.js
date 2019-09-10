@@ -41,14 +41,14 @@ let photoAnimation = bodymovin.loadAnimation({
 const hiTL = new TimelineMax({repeat:0});
 hiTL.from(".home__hi-box", 1.3, {scale: 0, ease: Elastic.easeOut.config(0.2, 0.1), delay: 0.4 })
 .to(".home__hi-box h1", 0.6, {rotation: 720, autoAlpha: 0, ease: Sine.easeIn, delay: 0.4 })
-.fromTo(".home__hi-box h2", 1.5, {scale: 0, rotation: -720, autoAlpha: 0.5,ease: Sine.easeIn},{scale: 1, rotation: 0, autoAlpha: 1,ease: Elastic.easeOut.config(0.6, 0.5), delay: -0.4})
+.fromTo(".home__hi-box h2", 2, {scale: 0, rotation: -1080, autoAlpha: 0.5,ease: Sine.easeIn},{scale: 1, rotation: 0, autoAlpha: 1,ease: Elastic.easeOut.config(0.2, 0.25), delay: -0.4})
 
 
 
 
-const homeTL = new TimelineMax({repeat:-1, delay:4.5});
-homeTL.to(".home__headline-second", 2, {text:"a designer who loves to code.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:3})
-.to(".home__headline-second", 2, {text:"a coder who loves to design.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:3})
+const homeTL = new TimelineMax({repeat:-1, delay:3});
+homeTL.to(".home__headline-second", 2, {text:"a designer who loves to code.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:1})
+.to(".home__headline-second", 2, {text:"a coder who loves to design.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:1})
 
 
 document.querySelector(".age").innerHTML = myAge();
@@ -136,6 +136,8 @@ const menuFunction = () => {
 }
 
 
+
+
 toggle.addEventListener("click", menuFunction);
 
 const menuItems = document.querySelectorAll('.menu-item');
@@ -162,7 +164,7 @@ TweenMax.from(".nav-toggle", 2, {
 TweenMax.from(".home__arrow-container", 0.2, {
   opacity: 0,
   ease: Power4.easeOut,
-  delay: 6
+  delay: 9
 });
 
 let coreImgTL = new TimelineMax();
@@ -294,9 +296,12 @@ let coreHeadlineScene = new ScrollMagic.Scene({
 let coreImgScene = new ScrollMagic.Scene({
   triggerElement: ".core-skills"
 }).on('start', function () {
-  developAnimation.play();
-  photoAnimation.play();
-  designAnimation.play();
+  designAnimation.goToAndPlay(0, true);
+  developAnimation.goToAndStop(0, true);
+  photoAnimation.goToAndStop(0, true);
+  setTimeout(function(){ developAnimation.play(); }, 800);
+  setTimeout(function(){ photoAnimation.play(); }, 1600);
+
 })
 
 let coreParagraphScene = new ScrollMagic.Scene({
@@ -315,9 +320,12 @@ let skillsScene = new ScrollMagic.Scene({
   triggerElement: ".about-me"
 }).setTween(skillsTL);
 
+
+
+
 let projectsScene = new ScrollMagic.Scene({
-  triggerElement: ".projects",
-  duration: "400%"
+  triggerElement: ".projects", 
+  duration: 4000
 }).setTween(projectsTween);
 
 let contactScene = new ScrollMagic.Scene({
