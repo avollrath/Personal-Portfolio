@@ -8,6 +8,11 @@ const myAge = () => {
   ).toFixed(2);
 };
 
+document.querySelector(".age").innerHTML = myAge();
+document.querySelector(".footer-year").innerHTML = new Date().getFullYear();
+document.querySelector("#graphic-design").innerHTML = new Date().getFullYear() - 2013;
+document.querySelector("#photography").innerHTML = new Date().getFullYear() - 2008;
+document.querySelector("#development").innerHTML = new Date().getFullYear() - 2019 + 1;
 
 
 let designAnimation = bodymovin.loadAnimation({
@@ -25,7 +30,6 @@ let developAnimation = bodymovin.loadAnimation({
   autoplay: false,
   path: '../assets/json/development.json'
 })
-
 
 
 let photoAnimation = bodymovin.loadAnimation({
@@ -51,8 +55,6 @@ homeTL.to(".home__headline-second", 2, {text:"a designer who loves to code.", ea
 .to(".home__headline-second", 2, {text:"a coder who loves to design.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:4})
 
 
-document.querySelector(".age").innerHTML = myAge();
-document.querySelector(".footer-year").innerHTML = new Date().getFullYear();
 
 const toggle = document.querySelector(".toggle input");
 const menu = document.querySelector(".menu");
