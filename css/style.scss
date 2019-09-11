@@ -58,8 +58,9 @@ header {
   position: absolute;
   right: 20px;
   z-index: 102;
-  padding: 0.5rem;
+  padding: 0.3rem;
   background-color: #fff;
+  border-radius: 5px;
   cursor: pointer;
   input {
     display: none;
@@ -192,6 +193,12 @@ header {
   transition: 400ms ease;
   box-shadow: -11px 0px 23px 6px rgba(0,0,0,0.34), -4px 0px 10px 2px rgba(0,0,0,0.22);
 
+  @include for-phone-only {
+    width: 100vw;
+    height: 90vh;
+    border-radius: 0 0 0px 60px;
+  }
+
   nav {
     display: flex;
     flex-direction: column;
@@ -203,6 +210,9 @@ header {
       color: #000;
       font-size: 3rem;
       font-family: "Playfair Display", serif;
+      @include for-phone-only {
+        font-size: 2.5rem;
+      }
     }
 
     .fab {
@@ -244,8 +254,8 @@ header {
   height: 100vh;
 
   @include for-phone-only {
-    height: 100%;
-    margin: 0 auto 3rem auto;
+    height: 100vh;
+    margin: 0 auto 1rem auto;
   }
 
   &__hi-box {
@@ -255,6 +265,8 @@ header {
     height: 300px;
     border-radius: 200px 200px 0 200px;
     margin: 3rem 0 4rem 0;
+
+    
    
 
     h1 {
@@ -295,7 +307,7 @@ header {
       font-weight: normal;
       @include for-phone-only {
         z-index: 1;
-        font-size: 2.6rem;
+        font-size: 2rem;
       }
 
 
@@ -308,6 +320,11 @@ header {
         color: $grey;
         font-family: $font, serif;
         font-weight: normal;
+
+        @include for-phone-only {
+      
+          font-size: 2rem;
+        }
     }
   }
 
@@ -345,13 +362,18 @@ header {
     align-items: center;
     justify-content: center;
 
+    @include for-phone-only {
+     margin: 1rem 0;
+    }
+
 
     .coreskills__img {
 
-     // background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-      width: 60%; //200px;
-     // height: 200px;
-     // border-radius: 50%;
+      width: 60%; 
+
+      @include for-phone-only {
+        width: 40%; 
+       }
 
 
     }
@@ -365,15 +387,16 @@ header {
       margin: 1rem;
 
       @include for-phone-only {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
     }
 
     h2 {
-      font-size: 1.3rem;
-      color: $yellow;
+      font-size: 0.7rem;
+      color: #000;
       text-transform: uppercase;
-      padding: 3px;
+      padding: 4px 6px;
+      background-color: $yellow;
     }
 
     p {
@@ -387,8 +410,10 @@ header {
       color: $grey;
       @include for-phone-only {
         width: 95vw;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0.3rem;
         margin: 1rem 0;
+        font-size: 0.9rem;
+        line-height: 1.1rem;
       }
     }
   }
@@ -414,7 +439,8 @@ header {
     margin: 2rem;
 
     @include for-phone-only {
-      font-size: 1.8rem;
+      font-size: 2rem;
+      margin: 2rem 0;
     }
   }
 
@@ -459,7 +485,8 @@ header {
     z-index: -1;
 
     @include for-phone-only {
-      clip-path: polygon(0 0, 100% 0, 100% 54%, 0 54%);
+      clip-path: none;
+      background-color: transparent;
     }
   }
 
@@ -471,11 +498,12 @@ header {
     transform: translateX(-15%);
 
     @include for-phone-only {
-      width: 98vw;
-      margin: 0.5rem;
-      padding: 0.5rem;
+      width: 100vw;
+      padding: 1rem;
       transform: none;
       height: 50%;
+      background-color: $yellow;
+      margin: 2rem;
     }
 
     h1 {
@@ -485,13 +513,18 @@ header {
       margin: 2rem;
 
       @include for-phone-only {
-        font-size: 3.2rem;
+        font-size: 2rem;
+        margin: 1rem;
       }
     }
 
     p {
       text-align: justify;
       font-size: 1.3rem;
+      @include for-phone-only {
+        font-size: 0.9rem;
+        padding-bottom:1rem;
+      }
     }
   }
 
@@ -505,7 +538,7 @@ header {
     @include for-phone-only {
       width: 98vw;
       height: 100%;
-      margin: 0rem 0.5rem 5rem 0.5rem;
+      margin: 0rem 0.5rem 0rem 0.5rem;
       padding: 0.5rem;
       transform: none;
     }
@@ -516,6 +549,10 @@ header {
       font-weight: normal;
       margin: 2rem;
       color: $grey;
+      @include for-phone-only {
+        margin: 0.5rem;
+        font-size: 2rem;
+      }
     }
 
     .skills-container {
@@ -563,14 +600,20 @@ header {
 
   @include for-phone-only {
     height: 100%;
+    margin: 3rem 0;
   }
 
   h1 {
     font-size: 2.5rem;
     font-family: $font, serif;
     font-weight: normal;
-    margin: 3rem 0 1rem 0;
+    margin: 5rem 0 1rem 0;
     color: $grey;
+
+    @include for-phone-only {
+      font-size: 2rem;
+      margin: 0;
+    }
   }
 
   &__wrapper {
@@ -595,18 +638,22 @@ header {
       width: 98vw;
       display: block;
       order: 2;
+      margin: 1rem 0rem;
     }
 
     .mobile {
 
         max-height: 70vh;
+        @include for-phone-only {
+          max-height: 50vh;
+        }
     }
 
     img {
       max-width: 50vw;
       max-height: 50vh;
       @include for-phone-only {
-        max-width: 98vw;
+        max-width: 80vw;
       }
     }
 
@@ -618,6 +665,7 @@ header {
 
       @include for-phone-only {
         font-size: 1.6rem;
+        margin: 0 0 0rem 0;
       }
     }
 
@@ -629,8 +677,9 @@ header {
       color: $grey;
 
       @include for-phone-only {
-        width: 98vw;
+        width: 100%;
         padding: 0.5rem;
+        font-size: 0.9rem;
       }
     }
 
@@ -638,17 +687,21 @@ header {
       font-size: 0.7rem;
       margin: 1rem auto;
       font-weight: bold;
+
+      @include for-phone-only {
+        margin: 0rem auto;
+      }
     }
 
     a {
       display: inline-block;
-      padding: 0.2rem;
-      color: #000;
+      font-weight: bold;
       text-decoration: none;
       text-transform: uppercase;
-      background-color: $yellow;
-      font-weight: bold;
       font-size: 0.7rem;
+      color: #000;
+      padding: 4px 6px;
+      background-color: $yellow;
       transition: 100ms ease;
     }
 
@@ -700,6 +753,11 @@ header {
     font-weight: normal;
     margin: 0 0 1rem 0;
     color: $grey;
+
+    @include for-phone-only {
+      font-size: 2rem;
+    }
+
   }
 
   &__form {

@@ -40,15 +40,15 @@ let photoAnimation = bodymovin.loadAnimation({
 
 const hiTL = new TimelineMax({repeat:0});
 hiTL.from(".home__hi-box", 1.3, {scale: 0, ease: Elastic.easeOut.config(0.2, 0.1), delay: 0.4 })
-.to(".home__hi-box h1", 0.6, {rotation: 720, autoAlpha: 0, ease: Sine.easeIn, delay: 0.4 })
+.to(".home__hi-box h1", 0.6, {rotation: 720, autoAlpha: 0, ease: Sine.easeIn })
 .fromTo(".home__hi-box h2", 2, {scale: 0, rotation: -1080, autoAlpha: 0.5,ease: Sine.easeIn},{scale: 1, rotation: 0, autoAlpha: 1,ease: Elastic.easeOut.config(0.2, 0.25), delay: -0.4})
 
 
 
 
 const homeTL = new TimelineMax({repeat:-1, delay:3});
-homeTL.to(".home__headline-second", 2, {text:"a designer who loves to code.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:1})
-.to(".home__headline-second", 2, {text:"a coder who loves to design.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:1})
+homeTL.to(".home__headline-second", 2, {text:"a designer who loves to code.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:2})
+.to(".home__headline-second", 2, {text:"a coder who loves to design.", ease:Linear.easeNone, yoyo:true,repeat:1, repeatDelay:4})
 
 
 document.querySelector(".age").innerHTML = myAge();
@@ -75,7 +75,7 @@ const menuFunction = () => {
     });
 
     TweenMax.to(".toggle", 0.5, {
-      x: -320,
+      x: -300,
       ease: Power1.easeInOut
     });
 
@@ -321,11 +321,11 @@ let skillsScene = new ScrollMagic.Scene({
 }).setTween(skillsTL);
 
 
-
+console.log((document.querySelector(".projects").offsetHeight) / 1.2)
 
 let projectsScene = new ScrollMagic.Scene({
   triggerElement: ".projects", 
-  duration: 4000
+  duration: (document.querySelector(".projects").offsetHeight / 1.3)
 }).setTween(projectsTween);
 
 let contactScene = new ScrollMagic.Scene({
