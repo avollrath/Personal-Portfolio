@@ -64,26 +64,22 @@ document.querySelector(".toggle").addEventListener("click", () => {
 });
 
 
-TweenMax.set(".menu", {
-  x: document.querySelector(".menu").offsetWidth
+TweenMax.set(menu, {
+  x: menu.offsetWidth
 });
 
 let menuState = 0;
 
 const menuFunction = () => {
 
- 
+ if (menuState == 0) {
 
-
-
-  if (menuState == 0) {
-
-    TweenMax.set(".menu", {
+    TweenMax.set(menu, {
       autoAlpha: 1,
-      x: document.querySelector(".menu").offsetWidth
+      x: menu.offsetWidth
     });
     
-    TweenMax.to(".menu", 0.1, {
+    TweenMax.to(menu, 0.1, {
       x: 0,
       ease: Power4.easeOut
     });
@@ -121,13 +117,13 @@ const menuFunction = () => {
   } else {
     menuState = 0;
 
-    TweenMax.to(".menu", 0.2, {
-      x: document.querySelector(".menu").offsetWidth,
+    TweenMax.to(menu, 0.2, {
+      x: menu.offsetWidth,
       ease: Power1.easeIn,
       delay: .3
     });
 
-    TweenMax.to(".menu", 0.2, {
+    TweenMax.to(menu, 0.2, {
       autoAlpha: 0,
       ease: Power1.easeIn,
       delay: .6
