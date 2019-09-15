@@ -12,7 +12,7 @@ document.querySelector(".age").innerHTML = myAge();
 document.querySelector(".footer-year").innerHTML = new Date().getFullYear();
 document.querySelector("#graphic-design").innerHTML = new Date().getFullYear() - 2013;
 document.querySelector("#photography").innerHTML = new Date().getFullYear() - 2008;
-document.querySelector("#development").innerHTML = new Date().getFullYear() - 2019 + 1;
+document.querySelector("#development").innerHTML = new Date().getFullYear() - 2019 + 1; // Remove +1 in 2020
 
 
 let designAnimation = bodymovin.loadAnimation({
@@ -63,14 +63,30 @@ document.querySelector(".toggle").addEventListener("click", () => {
   toggle.checked = !toggle.checked;
 });
 
+
+TweenMax.set(".menu", {
+  x: document.querySelector(".menu").offsetWidth
+});
+
 let menuState = 0;
 
 const menuFunction = () => {
 
  
 
+
+
   if (menuState == 0) {
-    menu.classList.toggle("menu-active");
+
+    TweenMax.set(".menu", {
+      autoAlpha: 1,
+      x: document.querySelector(".menu").offsetWidth
+    });
+    
+    TweenMax.to(".menu", 0.1, {
+      x: 0,
+      ease: Power4.easeOut
+    });
 
     TweenMax.set(".toggle", {
       backgroundColor: "transparent"
@@ -104,6 +120,18 @@ const menuFunction = () => {
     );
   } else {
     menuState = 0;
+
+    TweenMax.to(".menu", 0.2, {
+      x: document.querySelector(".menu").offsetWidth,
+      ease: Power1.easeIn,
+      delay: .3
+    });
+
+    TweenMax.to(".menu", 0.2, {
+      autoAlpha: 0,
+      ease: Power1.easeIn,
+      delay: .6
+    });
    
 
     TweenMax.staggerTo(

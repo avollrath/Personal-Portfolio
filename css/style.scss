@@ -188,10 +188,11 @@ header {
   width: 400px;
   height: 100vh;
   position: absolute;
-  right: -450px;
+  right: 0px;
   top: 0;
   transition: 400ms ease;
-  box-shadow: -11px 0px 23px 6px rgba(0,0,0,0.34), -4px 0px 10px 2px rgba(0,0,0,0.22);
+  box-shadow: -11px 0px 23px 6px rgba(0,0,0,0.05), -4px 0px 10px 2px rgba(0,0,0,0.10);
+  visibility: hidden;
 
   @include for-phone-only {
     width: 100vw;
@@ -240,11 +241,6 @@ header {
   }
 }
 
-.menu-active {
-  right: 0;
-  transition: 400ms ease;
-  z-index: 100;
-}
 
 .home {
   scroll-snap-align: center;
@@ -835,6 +831,23 @@ header {
   align-items: center;
   position: relative;
   background-color: rgb(34, 34, 34);
+
+
+  iframe {
+
+    filter: grayscale(1) brightness(0.5);
+    transition: 180ms ease;
+
+  }
+
+  iframe:hover {
+
+    filter: none;
+    transition: 210ms ease;
+
+  }
+
+  
 
   @include for-phone-only {
     margin: 4rem 0 0 0;
