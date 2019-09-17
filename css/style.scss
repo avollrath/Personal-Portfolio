@@ -14,6 +14,11 @@
   }
 }
 
+@mixin for-tablet-landscape{
+  @media (max-width: 1200px) and (min-width: 600px) { 
+    @content; }
+}
+
 $yellow: #feeb00;
 $grey: #888888;
 $color: #888888;
@@ -350,6 +355,11 @@ header {
     height: 100%;
   }
 
+  @include for-tablet-landscape {
+    flex-wrap: wrap;
+    height: 100%;
+  }
+
 
 
   &__box {
@@ -361,7 +371,10 @@ header {
     @include for-phone-only {
      margin: 1rem 0;
     }
-
+    
+    @include for-tablet-landscape {
+      margin: 2rem 0;
+    }
 
     .coreskills__img {
 
@@ -370,6 +383,11 @@ header {
       @include for-phone-only {
         width: 80%; 
        }
+
+
+       @include for-tablet-landscape {
+        width: 30%; 
+      }
 
 
     }
@@ -427,12 +445,22 @@ header {
     height: auto;
   }
 
+  @include for-tablet-landscape {
+    height: auto;
+  }
+
+  
+
   h1 {
     font-size: 2.5rem;
     color: $grey;
     font-family: $font, serif;
     font-weight: normal;
     margin: 2rem;
+
+    @include for-tablet-landscape {
+      margin: 4rem;
+    }
 
     @include for-phone-only {
       font-size: 2rem;
@@ -472,6 +500,12 @@ header {
     flex-direction: column;
   }
 
+  @include for-tablet-landscape {
+    height: 100%;
+    flex-direction: column;
+  }
+
+
   &__background {
     clip-path: polygon(0 0, 62% 0, 44% 100%, 0% 100%);
     background-color: $yellow;
@@ -479,6 +513,11 @@ header {
     width: 100%;
     position: absolute;
     z-index: -1;
+
+    @include for-tablet-landscape {
+      clip-path: none;
+      background-color: transparent;
+    }
 
     @include for-phone-only {
       clip-path: none;
@@ -496,6 +535,15 @@ header {
     @include for-phone-only {
       width: 100vw;
       padding: 1rem;
+      transform: none;
+      height: 50%;
+      background-color: $yellow;
+      margin: 2rem;
+    }
+
+    @include for-tablet-landscape {
+      width: 100vw;
+      padding: 5rem;
       transform: none;
       height: 50%;
       background-color: $yellow;
@@ -530,6 +578,14 @@ header {
     margin: 3rem;
     padding: 2rem;
     transform: translateX(10%);
+
+    @include for-tablet-landscape {
+      width: 98vw;
+      height: 100%;
+      margin: 0rem 0.5rem 0rem 0.5rem;
+      padding: 0.5rem;
+      transform: none;
+    }
 
     @include for-phone-only {
       width: 98vw;
@@ -594,10 +650,19 @@ header {
   overflow-x: hidden;
   height: 100%;
 
+  @include for-tablet-landscape {
+    height: 100%;
+    margin: 2rem 0;
+  }
+
+  
+
   @include for-phone-only {
     height: 100%;
     margin: 3rem 0;
   }
+
+
 
   h1 {
     font-size: 2.5rem;
@@ -605,6 +670,8 @@ header {
     font-weight: normal;
     margin: 5rem 0 1rem 0;
     color: $grey;
+
+    
 
     @include for-phone-only {
       font-size: 2rem;
@@ -629,6 +696,12 @@ header {
     transition: 0.5s ease;
     display: flex;
     align-items: center;
+
+   
+  @include for-tablet-landscape {
+    width: 98vw;
+  
+  }
 
     @include for-phone-only {
       width: 98vw;
@@ -659,6 +732,11 @@ header {
       text-transform: uppercase;
       margin: 0 0 1rem 0;
 
+      @include for-tablet-landscape {
+        font-size: 1.8rem;
+      
+      }
+
       @include for-phone-only {
         font-size: 1.6rem;
         margin: 0 0 0rem 0;
@@ -671,6 +749,13 @@ header {
       text-align-last: center;
       margin: auto;
       color: $grey;
+
+      @include for-tablet-landscape {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+      
+      }
 
       @include for-phone-only {
         width: 100%;
