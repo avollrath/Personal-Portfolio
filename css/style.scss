@@ -193,7 +193,7 @@ header {
   width: 400px;
   height: 100vh;
   position: absolute;
-  right: 0px;
+  right: -400px;
   top: 0;
   transition: 400ms ease;
   box-shadow: -11px 0px 23px 6px rgba(0,0,0,0.05), -4px 0px 10px 2px rgba(0,0,0,0.10);
@@ -224,6 +224,7 @@ header {
     .fab {
       color: #000;
       transition: 90ms ease;
+      margin: 10px;
     }
 
     .fab:hover {

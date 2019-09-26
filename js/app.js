@@ -73,6 +73,9 @@ let menuState = 0;
 
 const menuFunction = () => {
 
+document.querySelector(".menu").style.right = "0px";
+
+
  if (menuState == 0) {
 
     TweenMax.set(menu, {
@@ -175,7 +178,8 @@ const menuItems = document.querySelectorAll('.menu-item');
 
 menuItems.forEach(menuItem => menuItem.addEventListener("click", function () 
 
-{menuFunction();
+{
+  menuFunction();
   toggle.checked = !toggle.checked;}));
 
 
@@ -228,6 +232,9 @@ let aboutTween = TweenMax.from(".about-me__background, .about-me__text", 1, {
   ease: Power4.easeOut,
   delay: 0.1
 });
+
+
+
 let skillsTween = TweenMax.from(".about-me__skills", 0.8, {
   x: 1000,
   ease: Power4.easeOut,
@@ -253,7 +260,7 @@ y: 30,
 let projectsTween = TweenMax.staggerFrom(
   ".projects__project",
   0.1,
-  { x: -300, autoAlpha: 0, scale: 0.4, ease: Power3.easeOut },
+  { x: -300,y: 100, autoAlpha: 0, scale: 0.4, ease: Power3.easeOut },
   0.2
 );
 

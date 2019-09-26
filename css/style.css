@@ -207,7 +207,7 @@ header {
   width: 400px;
   height: 100vh;
   position: absolute;
-  right: 0px;
+  right: -400px;
   top: 0;
   -webkit-transition: 400ms ease;
   transition: 400ms ease;
@@ -257,6 +257,7 @@ header {
   color: #000;
   -webkit-transition: 90ms ease;
   transition: 90ms ease;
+  margin: 10px;
 }
 
 .menu nav .fab:hover {
