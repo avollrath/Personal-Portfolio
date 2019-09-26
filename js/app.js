@@ -200,29 +200,8 @@ TweenMax.from(".home__arrow-container", 0.2, {
 
 let coreImgTL = new TimelineMax();
 
-// coreImgTL
-//   .staggerFrom(
-//     ".coreskills__img",
-//     1,
-//     { scale: 0.01, rotation: 200, ease: Power3.easeInOut },
-//     0.2
-//   )
-//   .staggerTo(
-//     ".coreskills__img",
-//     0.3,
-//     { scale: 0.8, ease: Power2.easeOut, delay: 0.2 },
-//     0.3
-//   )
-//   .staggerTo(".coreskills__img", 0.2, {
-//     scale: 1.0,
-//     ease: Power4.easeOut,
-//     delay: 0.2
-//   });
-  
-  
-  
 
-
+  
 let coreHeadlineTween = TweenMax.staggerFrom(
   ".coreskills__headline",
   1,
@@ -265,9 +244,9 @@ skillsTL
     ease: Power2.easeOut,
     delay: -0.3
   })
-  .from(".about-me__skills", 0.2, {
-    rotation: 10,
-    ease: Power4.easeOut,
+  .from(".about-me__skills", 0.3, {
+y: 30,
+    ease: Power2.easOut,
     delay: 0.2
   });
 
