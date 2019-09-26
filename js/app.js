@@ -65,7 +65,8 @@ document.querySelector(".toggle").addEventListener("click", () => {
 
 
 TweenMax.set(menu, {
-  x: menu.offsetWidth
+  x: menu.offsetWidth,
+  autoAlpha: 0
 });
 
 let menuState = 0;
@@ -75,8 +76,12 @@ const menuFunction = () => {
  if (menuState == 0) {
 
     TweenMax.set(menu, {
-      autoAlpha: 1,
+      autoAlpha: 0,
       x: menu.offsetWidth
+    });
+
+    TweenMax.set(menu, {
+      autoAlpha: 1
     });
     
     TweenMax.to(menu, 0.1, {
