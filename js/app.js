@@ -257,12 +257,63 @@ y: 30,
     delay: 0.2
   });
 
-let projectsTween = TweenMax.staggerFrom(
-  ".projects__project",
-  0.1,
-  { x: -300,y: 100, autoAlpha: 0, scale: 0.4, ease: Power3.easeOut },
-  0.2
+
+  let projectsTween = TweenMax.from(
+    "#projects-headline",
+    0.4,
+    { y: 50, autoAlpha: 0, scale: 0.6, ease: Power3.easeOut }
+  );
+
+
+let janneTween = TweenMax.from(
+  ".janne",
+  0.3,
+  { x: -300, scale: 0.5, ease: Power1.easeIn }
 );
+
+let sushiTween = TweenMax.from(
+  ".sushi",
+  0.3,
+  { x: 300, scale: 0.5, ease: Power1.easeIn }
+);
+
+let portfolioTween = TweenMax.from(
+  ".portfolio",
+  0.3,
+  { x: -300, scale: 0.5, ease: Power1.easeIn }
+);
+
+let ttuTween = TweenMax.from(
+  ".ttu",
+  0.3,
+  { x: 300, scale: 0.5, ease: Power1.easeIn }
+);
+
+let colorgenTween = TweenMax.from(
+  ".colorgen",
+  0.3,
+  { x: -300, scale: 0.5, ease: Power1.easeIn }
+);
+
+let countriesTween = TweenMax.from(
+  ".countries",
+  0.3,
+  { x: 300, scale: 0.5, ease: Power1.easeIn }
+);
+
+let rokotinTween = TweenMax.from(
+  ".rokotin",
+  0.3,
+  { x: -300, scale: 0.5, ease: Power1.easeIn }
+);
+
+
+let moneytrackerTween = TweenMax.from(
+  ".moneytracker",
+  0.3,
+  { x: 300, scale: 0.5, ease: Power1.easeIn }
+);
+
 
 let cableLeftTween = TweenMax.from("#cable-left", 0.3, {
   x: -1000,
@@ -338,12 +389,53 @@ let skillsScene = new ScrollMagic.Scene({
 }).setTween(skillsTL);
 
 
-console.log((document.querySelector(".projects").offsetHeight) / 1.2)
-
 let projectsScene = new ScrollMagic.Scene({
   triggerElement: ".projects", 
-  duration: (document.querySelector(".projects").offsetHeight / 1.3)
+  offset: 200
 }).setTween(projectsTween);
+
+
+let janneScene = new ScrollMagic.Scene({
+  triggerElement: ".janne", 
+  triggerHook: 1
+}).setTween(janneTween);
+
+let sushiScene = new ScrollMagic.Scene({
+  triggerElement: ".sushi", 
+  triggerHook: 1
+}).setTween(sushiTween);
+
+let portfolioScene = new ScrollMagic.Scene({
+  triggerElement: ".portfolio", 
+  triggerHook: 1
+}).setTween(portfolioTween);
+
+let ttuScene = new ScrollMagic.Scene({
+  triggerElement: ".ttu", 
+  triggerHook: 1
+}).setTween(ttuTween);
+
+let colorgenScene = new ScrollMagic.Scene({
+  triggerElement: ".colorgen", 
+  triggerHook: 1
+}).setTween(colorgenTween);
+
+let countriesScene = new ScrollMagic.Scene({
+  triggerElement: ".countries", 
+  triggerHook: 1
+}).setTween(countriesTween);
+
+let rokotinScene = new ScrollMagic.Scene({
+  triggerElement: ".rokotin", 
+  triggerHook: 1
+}).setTween(rokotinTween);
+
+let moneytrackerScene = new ScrollMagic.Scene({
+  triggerElement: ".moneytracker", 
+  triggerHook: 1
+}).setTween(moneytrackerTween);
+
+
 
 let contactScene = new ScrollMagic.Scene({
   triggerElement: ".contact"
@@ -357,5 +449,13 @@ controller.addScene([
   coreHeadlineScene,
   coreParagraphScene,
   projectsScene,
+  janneScene,
+  sushiScene,
+  portfolioScene,
+  ttuScene,
+  colorgenScene,
+  countriesScene,
+  rokotinScene,
+  moneytrackerScene,
   contactScene
 ]);
