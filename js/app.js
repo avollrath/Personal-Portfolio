@@ -267,7 +267,7 @@ y: 30,
 
 let janneTween = TweenMax.from(
   ".janne",
-  0.1,
+  0.3,
   { x: -300, scale: 0.5, force3D:true, ease: Power1.easeIn }
 );
 
