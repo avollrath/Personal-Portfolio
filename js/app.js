@@ -261,57 +261,57 @@ y: 30,
   let projectsTween = TweenMax.from(
     "#projects-headline",
     0.4,
-    { y: 50, autoAlpha: 0, scale: 0.6, ease: Power3.easeOut }
+    { y: 50, autoAlpha: 0, scale: 0.6,force3D:true, ease: Power3.easeOut }
   );
 
 
 let janneTween = TweenMax.from(
   ".janne",
-  0.3,
-  { x: -300, scale: 0.5, ease: Power1.easeIn }
+  0.1,
+  { x: -300, scale: 0.5, force3D:true, ease: Power1.easeIn }
 );
 
 let sushiTween = TweenMax.from(
   ".sushi",
   0.3,
-  { x: 300, scale: 0.5, ease: Power1.easeIn }
+  { x: 300, scale: 0.5, force3D:true, ease: Power1.easeIn }
 );
 
 let portfolioTween = TweenMax.from(
   ".portfolio",
   0.3,
-  { x: -300, scale: 0.5, ease: Power1.easeIn }
+  { x: -300, scale: 0.5, force3D:true,ease: Power1.easeIn }
 );
 
 let ttuTween = TweenMax.from(
   ".ttu",
   0.3,
-  { x: 300, scale: 0.5, ease: Power1.easeIn }
+  { x: 300, scale: 0.5,force3D:true, ease: Power1.easeIn }
 );
 
 let colorgenTween = TweenMax.from(
   ".colorgen",
   0.3,
-  { x: -300, scale: 0.5, ease: Power1.easeIn }
+  { x: -300, scale: 0.5,force3D:true,ease: Power1.easeIn }
 );
 
 let countriesTween = TweenMax.from(
   ".countries",
   0.3,
-  { x: 300, scale: 0.5, ease: Power1.easeIn }
+  { x: 300, scale: 0.5,force3D:true, ease: Power1.easeIn }
 );
 
 let rokotinTween = TweenMax.from(
   ".rokotin",
   0.3,
-  { x: -300, scale: 0.5, ease: Power1.easeIn }
+  { x: -300, scale: 0.5,force3D:true, ease: Power1.easeIn }
 );
 
 
 let moneytrackerTween = TweenMax.from(
   ".moneytracker",
   0.3,
-  { x: 300, scale: 0.5, ease: Power1.easeIn }
+  { x: 300, scale: 0.5, force3D:true,ease: Power1.easeIn }
 );
 
 
@@ -397,42 +397,39 @@ let projectsScene = new ScrollMagic.Scene({
 
 let janneScene = new ScrollMagic.Scene({
   triggerElement: ".janne", 
-  triggerHook: 1
 }).setTween(janneTween);
 
 let sushiScene = new ScrollMagic.Scene({
   triggerElement: ".sushi", 
-  triggerHook: 1
 }).setTween(sushiTween);
 
 let portfolioScene = new ScrollMagic.Scene({
   triggerElement: ".portfolio", 
-  triggerHook: 1
 }).setTween(portfolioTween);
 
 let ttuScene = new ScrollMagic.Scene({
   triggerElement: ".ttu", 
-  triggerHook: 1
+
 }).setTween(ttuTween);
 
 let colorgenScene = new ScrollMagic.Scene({
   triggerElement: ".colorgen", 
-  triggerHook: 1
+
 }).setTween(colorgenTween);
 
 let countriesScene = new ScrollMagic.Scene({
   triggerElement: ".countries", 
-  triggerHook: 1
+
 }).setTween(countriesTween);
 
 let rokotinScene = new ScrollMagic.Scene({
   triggerElement: ".rokotin", 
-  triggerHook: 1
+ 
 }).setTween(rokotinTween);
 
 let moneytrackerScene = new ScrollMagic.Scene({
   triggerElement: ".moneytracker", 
-  triggerHook: 1
+
 }).setTween(moneytrackerTween);
 
 
