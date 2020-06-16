@@ -12,8 +12,7 @@ document.querySelector(".age").innerHTML = myAge();
 document.querySelector(".footer-year").innerHTML = new Date().getFullYear();
 document.querySelector("#graphic-design").innerHTML = new Date().getFullYear() - 2013;
 document.querySelector("#photography").innerHTML = new Date().getFullYear() - 2008;
-document.querySelector("#development").innerHTML = new Date().getFullYear() - 2019 + 1; // Remove +1 in 2020
-
+document.querySelector("#development").innerHTML = new Date().getFullYear() - 2019;
 
 let designAnimation = bodymovin.loadAnimation({
   container: document.getElementById('design-ani'),
